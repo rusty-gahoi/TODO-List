@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: rgb(231, 225, 225);
+    color: rgb(9, 9, 107);
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+/* .containerMain {
+    width: 60%;
+    border: 2px solid yellow;
+} */
+
+
+section {
+    margin: 2rem 0;
+    padding: 0 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.greetings .title {
+    display: flex;
+}
+
+.greetings .title input {
+    margin-left: 0.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
+    color: rgb(9, 9, 107);
+}
+
+.greetings .title,
+.greetings .title input {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.create-todo input[type="text"] {
+    display: block;
+    width: 100%;
+    background-color: white;
+    color: rgb(9, 9, 107);
+    font-size: 1.12rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: rgb(152, 148, 148);
+}
+
+.create-todo .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-todo .options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgb(152, 148, 148);
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+    /* this to hide the radio and checkbox sign
+    we will make a bubble with .bubble class in place of them */
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(98, 153, 216);
+    border-radius: 50%;
+    /* box-shadow: rgb(53, 158, 43); */
+}
+
+.bubble.personal {
+    border-color: rgb(240, 110, 110);
+    /* box-shadow: ; */
+}
+
+.bubble::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: rgb(98, 153, 216);
+    /* box-shadow: rgb(53, 158, 43); */
+    border-radius: 50%;
+    transition: 0.2sec ease-in-out;
+}
+
+.bubble.personal::after {
+    background-color: rgb(240, 110, 110);
+    /* box-shadow: ; */
+}
+
+input:checked~.bubble::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.create-todo .options label div {
+    font-size: 1.12rem;
+    margin-top: 1rem;
+}
+
+.create-todo input[type="submit"] {
+    display: block;
+    width: 100%;
+    font-size: 1.12rem;
+    padding: 1rem 1.5rem;
+    color: white;
+    background-color: rgb(81, 222, 196);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.create-todo input[type="submit"]:hover {
+    opacity: 0.75;
+}
+
+.todo-list .list {
+    margin: 1rem 0;
+
+}
+
+.todo-list .todo-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.todo-item label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-item .todo-content {
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+    font-size: 1.12rem;
+
+}
+
+.todo-item .actions {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .actions button {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover {
+    opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+    margin-right: 0.5rem;
+    background-color: rgb(189, 87, 170);
+}
+
+
+.todo-item .actions .delete {
+    background-color: rgb(240, 71, 71);
+}
+
+.todo-item.done .todo-content input {
+    text-decoration: line-through;
+}
